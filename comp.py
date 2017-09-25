@@ -35,6 +35,9 @@ def func(user1, user2):
     v2 = getProblems(user2)
     return list(set(v1) - set(v2))
 
+@app.route("/")
+def init():
+    return render_template('index.html')
 
 @app.route('/compara/<user1>_<user2>')   
 def comparador(user1, user2):	
