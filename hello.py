@@ -1,14 +1,14 @@
 from flask import Flask, redirect, url_for, request, render_template
-app = Flask(__name__)
 from bs4 import BeautifulSoup
 import requests
-from time import sleep
 
-def getProblems(uID):
-	
+app = Flask(__name__)
+
+def getProblems(uID):	
+
 	v = []
 	pagNum = 1
-
+	
 	while True:
 
 		page = requests.get('https://www.urionlinejudge.com.br/judge/pt/profile/' + str(uID) + '?page='+str(pagNum));
@@ -17,7 +17,6 @@ def getProblems(uID):
 			return v
 			
 		soup = BeautifulSoup(page.content, 'html.parser')
-
 		tr = soup.find_all('tr')
         
 		for x in range(1, 29):

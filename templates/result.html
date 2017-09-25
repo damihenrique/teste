@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+   <body>
+   
+      <table border = 1 cellspacing="10px">
+		 {% for x in result %}     
+	
+		 	{% if (loop.index-1) % 20 == 0 %}      
+				<tr>
+			{% endif %}
+
+			<th> <a href="{{'https://www.urionlinejudge.com.br/judge/pt/problems/view/%s'%x}}" style="font-size: 22px">  {{x}} </a> </th> 
+
+			{% if loop.index % 20 == 0 %}      
+				
+				</tr> 
+			{% endif %}
+
+         {% endfor %}
+      </table>
+      
+   </body>
+</html>	
