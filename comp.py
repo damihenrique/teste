@@ -49,12 +49,12 @@ def login():
    if request.method == 'POST':
       user1 = request.form['id1']
       user2 = request.form['id2']
-      return redirect(url_for('comparador',user1 = user1, user2 = user2)) #nome fa função (comparador)
+      return redirect(url_for('comparador',user1 = user1, user2 = user2)) #nome da função (comparador)
    else:
       user = request.args.get('id1')
       return redirect(url_for('comparador',name = user1, user2 = user2))
 
 if __name__ == '__main__':
-	port = int(os.environ.get("PORT", 5000))
-	app.run(host='0.0.0.0', port=port)
-	#app.run(debug = True)
+	#port = int(os.environ.get("PORT", 5000))
+	#app.run(host='0.0.0.0', port=port)
+	app.run()
