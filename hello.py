@@ -1,6 +1,7 @@
 from flask import Flask, redirect, url_for, request, render_template
 from bs4 import BeautifulSoup
 import requests
+import os
 
 app = Flask(__name__)
 
@@ -8,7 +9,7 @@ def getProblems(uID):
 
 	v = []
 	pagNum = 1
-	
+
 	while True:
 
 		page = requests.get('https://www.urionlinejudge.com.br/judge/pt/profile/' + str(uID) + '?page='+str(pagNum));
@@ -51,4 +52,6 @@ def login():
       return redirect(url_for('comparador',name = user1, user2 = user2))
 
 if __name__ == '__main__':
-   app.run(debug = True)
+	port = int(os.environ.get("PORT", 5000))
+	app.run(host='0.0.0.0', port=port)
+	#app.run(debug = True)
