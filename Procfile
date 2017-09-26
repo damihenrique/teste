@@ -1,1 +1,1 @@
--web: python comp.py
+web: python comp.py
