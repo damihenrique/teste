@@ -56,7 +56,7 @@ def func(user1, user2):
 	getProblems(user2, 1, qt2)
 	while len(listURL) < (qt1+qt2):
 		aaa = 1
-	time.sleep(2)
+	time.sleep(1)
 	ret = list(set(v1) - set(v2))
 	v1.clear()
 	v2.clear()
